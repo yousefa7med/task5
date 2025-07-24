@@ -9,6 +9,9 @@ class otpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        
+      ),
       resizeToAvoidBottomInset: false,
       body: BlueContainer(
         child: Column(

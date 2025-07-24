@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:otp_screen/models/product_model.dart';
 import 'package:otp_screen/views/Otp_Screen.dart';
+import 'package:otp_screen/views/home_screen.dart';
 import 'package:otp_screen/views/signup_screen.dart';
 import 'package:otp_screen/widgets/blue_container.dart';
 import 'package:otp_screen/widgets/costum_bottom.dart';
@@ -47,7 +49,21 @@ class LoginScreen extends StatelessWidget {
             ),
             Spacer(flex: 1),
 
-            Bottom(text: "Login", onPressed: () {}),
+            Bottom(
+              text: "Login",
+              onPressed: () {
+                List<ProductModel> products = [];
+                for (var map in dummyProducts) {
+                  products.add(ProductModel.fromMap(map));
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(products: products),
+                    ),
+                  );
+                }
+              },
+            ),
             SizedBox(height: 10),
             textRow(
               unClickableText: "Don't Have Account?  ",
