@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otp_screen/views/login_screen.dart';
-
+import 'package:otp_screen/core/theme.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -8,9 +8,8 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LoginScreen());
+    return MaterialApp(home: LoginScreen(),theme: AppTheme.lightTheme,);
   }
 }
